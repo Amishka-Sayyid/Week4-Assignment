@@ -1,0 +1,73 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Quintessential&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #f38fe4;
+  align-items: center;
+}
+header h1 {
+  margin: 1rem;
+  font-size: 2rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+/* menuDropdown div */
+.menuDropdown {
+  position: relative;
+  display: inline-block;
+}
+/* menu icon */
+button {
+  padding: 1rem;
+  margin: 1rem;
+  text-decoration: none;
+  font-size: 1.3rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 1.5rem;
+  transition: border-color 0.25s;
+  background-color: rgb(250, 239, 251);
+  text-transform: uppercase;
+}
+button:hover,
+button:focus {
+  border-color: #f38fe4;
+}
+/* menu drop down content (Hidden by Default) */
+.dropContent {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 5px 16px 0px #e8b1de;
+  z-index: 1;
+  font-size: 1.3rem;
+  border-radius: 2rem;
+}
+.dropContent a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropContent a:hover,
+.dropContent a:focus {
+  background-color: rgb(235, 203, 232);
+  border-radius: 2rem;
+}
+/* when menu icon clicked*/
+.show {
+  display: block;
+}

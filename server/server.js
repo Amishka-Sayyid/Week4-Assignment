@@ -35,7 +35,7 @@ export const db = new pg.Pool({
 app.post("/new-data", async (req, res) => {
   const data = req.body.formValues;
   const query = await db.query(
-    `INSERT INTO table_name (col, col2, col3) VALUES ($1, $2, $3)`,
+    `INSERT INTO guestbook (user_name, favourite_colour, message) VALUES ($1, $2, $3)`,
     [data.input1, data.input2, data.input3]
   );
   await res.json(query.rows);
