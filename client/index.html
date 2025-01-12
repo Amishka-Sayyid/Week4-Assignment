@@ -36,7 +36,32 @@
       </div>
     </header>
     <main>
-      <div id="app"></div>
+      <div id="app">
+        <h2>GUESTBOOK FORM</h2>
+        <form id="messageForm">
+          <input
+            type="text"
+            name="user_name"
+            id="user_name"
+            placeholder="full name here please"
+            required
+          />
+          <input
+            type="text"
+            name="favourite_colour"
+            id="favourite_colour"
+            placeholder="favourite colour here please"
+            required
+          />
+          <textarea
+            name="message"
+            id="message"
+            placeholder="please enter the content you wish to share"
+            required
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </main>
     <a class="gotopbtn" href="">
       <i class="fa-solid fa-arrow-up"></i>

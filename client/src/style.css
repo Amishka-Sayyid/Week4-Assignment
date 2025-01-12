@@ -128,10 +128,58 @@ main {
   position: relative;
   /* padding to ensure footer doesn't overlap main content */
   padding-bottom: 4.5rem;
+  padding: 0 10%;
 }
 /* Ensuring that the 'main' content doesn't overlap footer */
 main::after {
   content: "";
   display: block;
   height: 4.5rem;
+}
+
+/* main app */
+#app {
+  font-family: "Roboto Condensed", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid #f38fe4;
+  border-radius: 2rem;
+  margin-top: 1rem;
+}
+#app h2 {
+  text-align: center;
+}
+#messageForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#messageForm input {
+  width: 60%;
+  padding: 1.3rem;
+  margin: 1rem;
+  border-radius: 2rem;
+  border: 1px solid#e8b1de;
+}
+
+#messageForm textarea {
+  width: 60%;
+  padding: 1.3rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  border: 1px solid#e8b1de;
+  height: 7rem;
+}
+#messageForm button {
+  padding: 1rem;
+  width: 5rem;
+  background-color: #eccce7;
+  border-radius: 5rem;
+  margin: 0.5rem;
 }
