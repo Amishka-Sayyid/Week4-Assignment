@@ -78,4 +78,60 @@ header button {
   display: block;
 }
 
+/* gotopbtn */
+.gotopbtn {
+  font-size: 1.3rem;
+  color: rgb(155, 30, 128);
+  border: 1px solid #f38fe4;
+  padding: 1rem;
+  border-radius: 4rem;
+  margin: auto;
+  position: fixed;
+  right: 20px;
+  bottom: 2rem;
+  z-index: 2;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.gotopbtn:hover {
+  background-color: #eccce7;
+  transform: scale(1.1);
+}
 /* footer */
+footer {
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 1rem;
+  margin: 0 auto;
+  color: rgb(40, 40, 41);
+  background-color: rgb(248, 240, 248);
+  border-top: 1px solid #f38fe4;
+  position: relative;
+  width: 100%;
+  height: 4.5rem;
+  z-index: 1;
+}
+footer a {
+  color: rgb(67, 59, 59);
+  height: 60px;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #f38fe4;
+}
+
+/* main*/
+main {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  /* padding to ensure footer doesn't overlap main content */
+  padding-bottom: 4.5rem;
+}
+/* Ensuring that the 'main' content doesn't overlap footer */
+main::after {
+  content: "";
+  display: block;
+  height: 4.5rem;
+}
