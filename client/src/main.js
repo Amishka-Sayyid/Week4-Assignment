@@ -57,29 +57,32 @@ function fetchFormData() {
       "Content-type": "application/json",
     },
   })
-    .then((response) => response.json()) // Parse the JSON response
+    // Parsing the JSON response
+    .then((response) => response.json())
+
+    // processing the fetched data
     .then((data) => {
-      console.log(data); // Log the fetched data to see its structure
-    });
+      //log to see the data array
+      console.log(data);
 
-  data
-    .forEach((singledata) => {
-      const userDiv = document.createElement("div");
-      userDiv.className = "UserDiv";
+      data.forEach((singledata) => {
+        const userDiv = document.createElement("div");
+        userDiv.className = "UserDiv";
 
-      userDiv.style.backgroundColor = singledata.favourite_colour;
+        userDiv.style.backgroundColor = singledata.favourite_colour;
 
-      const messageInput = document.createElement("p");
+        const messageInput = document.createElement("p");
 
-      messageInput.textContent = ` ${singledata.message}`;
+        messageInput.textContent = ` ${singledata.message}`;
 
-      const userName = document.createElement("p");
-      userName.textContent = singledata.user_name;
+        const userName = document.createElement("p");
+        userName.textContent = singledata.user_name;
 
-      userDiv.appendChild(messageInput);
-      userDiv.appendChild(userName);
+        userDiv.appendChild(messageInput);
+        userDiv.appendChild(userName);
 
-      messageContainer.appendChild(userDiv);
+        messageContainer.appendChild(userDiv);
+      });
     })
     .catch((error) => {
       console.error("Error fetching messages:", error);
