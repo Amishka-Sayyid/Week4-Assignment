@@ -34,8 +34,8 @@ function handleSubmitMessageForm(event) {
   event.preventDefault();
   const formData = new FormData(messageForm);
   const formValues = Object.fromEntries(formData);
-  // https://week4-assignment-rwnh.onrender.com
-  fetch("http://localhost:8080/new-data", {
+
+  fetch("https://week4-assignment-rwnh.onrender.com/new-data", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -51,12 +51,15 @@ function handleSubmitMessageForm(event) {
 const messageContainer = document.getElementById("app2");
 
 async function fetchFormData() {
-  const response = await fetch("http://localhost:8080/messages", {
-    method: "GET",
-    headers: {
-      "Content-type": "application/json",
-    },
-  });
+  const response = await fetch(
+    "https://week4-assignment-rwnh.onrender.com/messages",
+    {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+      },
+    }
+  );
   // Parsing the response
   const data = await response.json();
 
