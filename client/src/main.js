@@ -40,7 +40,7 @@ function handleSubmitMessageForm(event) {
     headers: {
       "Content-type": "application/json",
     },
-    body: JSON.stringify(formValues),
+    body: JSON.stringify({ formValues }),
   });
   console.log(formValues);
 }
