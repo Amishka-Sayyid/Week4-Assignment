@@ -1,0 +1,54 @@
+/* For small screens up to 400px */
+@media (max-width: 400px) {
+  header {
+    font-size: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 100%;
+  }
+  header h1 {
+    font-size: 1rem;
+    align-items: center;
+  }
+
+  header button {
+    font-size: 0.6rem;
+    padding: 0.6rem;
+  }
+
+  #headerpart3 {
+    display: inline-block;
+    padding: 0;
+    margin: auto;
+  }
+}
+/* For medium screens (up to 600px) */
+@media (max-width: 600px) {
+  header {
+    font-size: 0.6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    width: 100%;
+  }
+  header h1 {
+    font-size: 1.2rem;
+    align-items: center;
+  }
+
+  header button {
+    font-size: 0.7rem;
+    padding: 0.7rem;
+  }
+
+  #headerpart3 {
+    display: inline-block;
+    padding: 0;
+    margin: auto;
+  }
+}

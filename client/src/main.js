@@ -1,4 +1,5 @@
 import "./style.css";
+import "./mediaQueries.css";
 //---------------------------
 //menu icon
 //select dom

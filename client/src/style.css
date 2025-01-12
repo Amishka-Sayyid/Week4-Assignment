@@ -23,17 +23,21 @@ header h1 {
   font-weight: 400;
   font-style: italic;
 }
+#headerpart3 {
+  display: inline-block;
+}
+
 /* menuDropdown div */
 .menuDropdown {
   position: relative;
   display: inline-block;
 }
 /* menu icon */
-button {
+header button {
   padding: 1rem;
   margin: 1rem;
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   border: 1px solid transparent;
   cursor: pointer;
   border-radius: 1.5rem;
@@ -41,8 +45,10 @@ button {
   background-color: rgb(250, 239, 251);
   text-transform: uppercase;
 }
-button:hover,
-button:focus {
+.dropbtn:hover,
+.dropbtn:focus,
+.headerButton:hover,
+.headerButton:focus {
   border-color: #f38fe4;
 }
 /* menu drop down content (Hidden by Default) */
@@ -71,3 +77,5 @@ button:focus {
 .show {
   display: block;
 }
+
+/* footer */
