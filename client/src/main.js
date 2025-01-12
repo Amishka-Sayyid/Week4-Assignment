@@ -10,8 +10,8 @@ import "./style.css";
 
 //the server url should be your local host while you are developing
 //! when you finish, you should replace it with your RENDER server url
-//https://week4-assignment.onrender.com
-fetch("server url", {
+//https://week4-assignment-rwnh.onrender.com
+fetch("https://week4-assignment-rwnh.onrender.com", {
   method: "POST",
   headers: {
     "Content-type": "application/json",
