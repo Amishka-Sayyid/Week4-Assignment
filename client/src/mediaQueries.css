@@ -70,6 +70,10 @@
     justify-content: center;
     align-content: center;
   }
+
+  .UserDiv {
+    width: 90%;
+  }
 }
 /* For medium screens (up to 600px) */
 @media (max-width: 600px) {
@@ -142,5 +146,8 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
+  }
+  .UserDiv {
+    width: 90%;
   }
 }

@@ -71,7 +71,8 @@ async function fetchFormData() {
 
     const messageInput = document.createElement("p");
 
-    messageInput.textContent = ` ${singledata.message}`;
+    messageInput.textContent = `" ${singledata.message}"`;
+    messageInput.className = "message";
 
     const userName = document.createElement("p");
     userName.textContent = singledata.user_name;
