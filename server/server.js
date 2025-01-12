@@ -23,57 +23,35 @@ app.listen(PORT, () => {
 });
 
 //--------------------
-
-app.post("/submit", function (req, res) {
-  console.log("received data", req.body);
-
-  const receivedData = req.body.formValues;
-
-  res.json({ message: "Data received successfully!", receivedData });
-});
-
-app.get("/messages", async (req, res) => {
-  try {
-    const result = await db.query("SELECT * FROM guestbook");
-    if (result.rows.length > 0) {
-      res.json(result.rows);
-    } else {
-      res.status(404).json({ message: "No messages found." });
-    }
-  } catch (error) {
-    console.error("Error fetching messages:", error);
-    res.status(500).json({ error: "Failed to fetch messages" });
-  }
-});
-//===================================
-//set up your database pool
+//creating db pool
 const dbConnectionString = process.env.DATABASE_URL;
 export const db = new pg.Pool({
   connectionString: dbConnectionString,
 });
 
-//=========================================
 //I need a route to READ data from the database
+app.get("/messages", async (req, res) => {
+  const result = await db.query("SELECT * FROM guestbook");
+  res.json(result.rows);
+});
+
 //I need a route to CREATE new data in the database
 
-// POST route to create new data in the database
 app.post("/new-data", async (req, res) => {
-  try {
-    const data = req.body.formValues;
+  console.log("This is the req.body", req.body);
 
-    // Query to insert data into the guestbook table
-    const query = await db.query(
-      `INSERT INTO guestbook (user_name, favourite_colour, message) VALUES ($1, $2, $3) RETURNING *`,
-      [data.user_name, data.favourite_colour, data.message]
-    );
+  const { formValues } = req.body;
 
-    // Send the inserted row as a JSON response
-    res.json({
-      message: "Data inserted successfully!",
-      newData: query.rows[0],
-    });
-  } catch (error) {
-    console.error("Error inserting data:", error);
-    res.status(500).json({ error: "Failed to insert data" });
-  }
+  const { user_name, favourite_colour, message } = formValues;
+
+  const query = await db.query(
+    `INSERT INTO guestbook (user_name, favourite_colour, message) 
+       VALUES ($1, $2, $3) RETURNING *`,
+    [user_name, favourite_colour, message]
+  );
+
+  res.json({
+    message: "Data inserted successfully!",
+    newData: query.rows[0],
+  });
 });
