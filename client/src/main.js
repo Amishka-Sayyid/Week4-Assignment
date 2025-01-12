@@ -43,6 +43,7 @@ function handleSubmitMessageForm(event) {
     body: JSON.stringify({ formValues }),
   });
   console.log(formValues);
+  alert("message sent successfully");
 }
 
 //The same way as we fetch the POST route, we also need to fetch the GET route, so we can display the data from the database on the DOM
