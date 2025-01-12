@@ -26,20 +26,25 @@ window.addEventListener("click", function (event) {
 //The main purpose is to handle the data from the form
 
 //Select the form from the DOM
-
+const messageForm = document.querySelector("#messageForm");
 //We need to build an event that handles the data from the form
-//event handler
-//event listener
+messageForm.addEventListener("submit", handleSubmitMessageForm);
 
-//the server url should be your local host while you are developing
-//! when you finish, you should replace it with your RENDER server url
-//https://week4-assignment-rwnh.onrender.com
-fetch("https://week4-assignment-rwnh.onrender.com", {
-  method: "POST",
-  headers: {
-    "Content-type": "application/json",
-  },
-  body: JSON.stringify({ formValues }),
-});
+function handleSubmitMessageForm(event) {
+  event.preventDefault();
+
+  const formData = new FormData(messageForm);
+
+  const formValues = Object.fromEntries(formData);
+
+  fetch("https://week4-assignment-rwnh.onrender.com", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({ formValues }),
+  });
+  console.log(formValues);
+}
 
 //The same way as we fetch the POST route, we also need to fetch the GET route, so we can display the data from the database on the DOM
