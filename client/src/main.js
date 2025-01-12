@@ -50,43 +50,37 @@ function handleSubmitMessageForm(event) {
 
 const messageContainer = document.getElementById("app2");
 
-function fetchFormData() {
-  fetch("http://localhost:8080/messages", {
+async function fetchFormData() {
+  const response = await fetch("http://localhost:8080/messages", {
     method: "GET",
     headers: {
       "Content-type": "application/json",
     },
-  })
-    // Parsing the JSON response
-    .then((response) => response.json())
+  });
+  // Parsing the response
+  const data = await response.json();
 
-    // processing the fetched data
-    .then((data) => {
-      //log to see the data array
-      console.log(data);
+  //log to see the data array
+  console.log(data);
 
-      data.forEach((singledata) => {
-        const userDiv = document.createElement("div");
-        userDiv.className = "UserDiv";
+  data.forEach((singledata) => {
+    const userDiv = document.createElement("div");
+    userDiv.className = "UserDiv";
 
-        userDiv.style.backgroundColor = singledata.favourite_colour;
+    userDiv.style.backgroundColor = singledata.favourite_colour;
 
-        const messageInput = document.createElement("p");
+    const messageInput = document.createElement("p");
 
-        messageInput.textContent = ` ${singledata.message}`;
+    messageInput.textContent = ` ${singledata.message}`;
 
-        const userName = document.createElement("p");
-        userName.textContent = singledata.user_name;
+    const userName = document.createElement("p");
+    userName.textContent = singledata.user_name;
 
-        userDiv.appendChild(messageInput);
-        userDiv.appendChild(userName);
+    userDiv.appendChild(messageInput);
+    userDiv.appendChild(userName);
 
-        messageContainer.appendChild(userDiv);
-      });
-    })
-    .catch((error) => {
-      console.error("Error fetching messages:", error);
-    });
+    messageContainer.appendChild(userDiv);
+  });
 }
 
 // Call the function to fetch and display data when needed
