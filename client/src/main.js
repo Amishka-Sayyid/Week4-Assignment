@@ -32,12 +32,10 @@ messageForm.addEventListener("submit", handleSubmitMessageForm);
 
 function handleSubmitMessageForm(event) {
   event.preventDefault();
-
   const formData = new FormData(messageForm);
-
   const formValues = Object.fromEntries(formData);
 
-  fetch("https://week4-assignment-rwnh.onrender.com", {
+  fetch("https://week4-assignment-rwnh.onrender.com/", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
