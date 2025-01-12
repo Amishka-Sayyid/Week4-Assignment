@@ -195,3 +195,21 @@ main::after {
   border-radius: 2rem;
   margin-top: 1.5rem;
 }
+.UserDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  font-family: "Roboto Condensed", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: normal;
+
+  height: 10rem;
+  width: 10rem;
+  margin: auto;
+
+  border: 1px solid #eccce7;
+  border-radius: 3rem;
+}

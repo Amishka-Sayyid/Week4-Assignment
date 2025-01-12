@@ -47,3 +47,44 @@ function handleSubmitMessageForm(event) {
 }
 
 //The same way as we fetch the POST route, we also need to fetch the GET route, so we can display the data from the database on the DOM
+
+const messageContainer = document.getElementById("app2");
+
+function fetchFormData() {
+  fetch("http://localhost:8080/messages", {
+    method: "GET",
+    headers: {
+      "Content-type": "application/json",
+    },
+  })
+    .then((response) => response.json()) // Parse the JSON response
+    .then((data) => {
+      console.log(data); // Log the fetched data to see its structure
+    });
+
+  data
+    .forEach((singledata) => {
+      const userDiv = document.createElement("div");
+      userDiv.className = "UserDiv";
+
+      userDiv.style.backgroundColor = singledata.favourite_colour;
+
+      const messageInput = document.createElement("p");
+
+      messageInput.textContent = ` ${singledata.message}`;
+
+      const userName = document.createElement("p");
+      userName.textContent = singledata.user_name;
+
+      userDiv.appendChild(messageInput);
+      userDiv.appendChild(userName);
+
+      messageContainer.appendChild(userDiv);
+    })
+    .catch((error) => {
+      console.error("Error fetching messages:", error);
+    });
+}
+
+// Call the function to fetch and display data when needed
+fetchFormData();
