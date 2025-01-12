@@ -57,6 +57,10 @@
   }
   #messageForm input {
     height: 1rem;
+    width: 80%;
+  }
+  #messageForm textarea {
+    width: 80%;
   }
 }
 /* For medium screens (up to 600px) */
@@ -118,5 +122,9 @@
   }
   #messageForm input {
     height: 1rem;
+    width: 80%;
+  }
+  #messageForm textarea {
+    width: 80%;
   }
 }
