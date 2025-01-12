@@ -11,13 +11,6 @@ app.use(express.json());
 app.use(cors());
 dotenv.config();
 
-const corsOptions = {
-  origin: "*",
-  methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type"],
-};
-app.use(cors(corsOptions));
-
 //create a root route
 app.get("/", (req, res) => {
   res.send("This is the root route!");

@@ -34,8 +34,8 @@ function handleSubmitMessageForm(event) {
   event.preventDefault();
   const formData = new FormData(messageForm);
   const formValues = Object.fromEntries(formData);
-
-  fetch("https://week4-assignment-rwnh.onrender.com/new-data", {
+  // https://week4-assignment-rwnh.onrender.com
+  fetch("http://localhost:8080/new-data", {
     method: "POST",
     headers: {
       "Content-type": "application/json",
