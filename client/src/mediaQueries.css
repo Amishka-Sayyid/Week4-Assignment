@@ -63,7 +63,7 @@
     width: 80%;
   }
   #app2 {
-    font-size: 1rem;
+    font-size: 0.7rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -72,7 +72,12 @@
   }
 
   .UserDiv {
-    width: 90%;
+    width: 70%;
+    height: 10rem;
+    font-size: 1rem;
+  }
+  .message {
+    font-size: 0.9rem;
   }
 }
 /* For medium screens (up to 600px) */
@@ -148,6 +153,11 @@
     align-content: center;
   }
   .UserDiv {
-    width: 90%;
+    width: 70%;
+    height: 10rem;
+    font-size: 1rem;
+  }
+  .message {
+    font-size: 0.9rem;
   }
 }
