@@ -50,6 +50,9 @@ function handleSubmitMessageForm(event) {
 
 const messageContainer = document.getElementById("app2");
 
+//storing the values from the formdata fetched to  this object
+const dataArray = [];
+
 async function fetchFormData() {
   const response = await fetch(
     "https://week4-assignment-rwnh.onrender.com/messages",
@@ -64,9 +67,31 @@ async function fetchFormData() {
   const data = await response.json();
 
   //log to see the data array
-  console.log(data);
+  console.log("full data fetched from the api", data);
 
-  data.forEach((singledata) => {
+  dataArray.length = 0;
+
+  data.forEach((someData) => {
+    dataArray.push(someData);
+  });
+
+  //logging it to console to see full data from the server
+  console.log(
+    "full array data from the server endpoint stored successfully in the dataArray object formed ",
+    dataArray
+  );
+
+  dataArray.length = 6;
+  //logging it to the console to see the data length that is reduced
+  console.log(dataArray);
+  return dataArray;
+}
+
+async function creatingElements() {
+  const savedData = await fetchFormData();
+  console.log(savedData);
+
+  savedData.forEach((singledata) => {
     const userDiv = document.createElement("div");
     userDiv.className = "UserDiv";
 
@@ -88,4 +113,4 @@ async function fetchFormData() {
 }
 
 // Call the function to fetch and display data when needed
-fetchFormData();
+creatingElements();

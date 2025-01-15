@@ -65,3 +65,11 @@ What useful external sources helped you complete the assignment (e.g Youtube tut
   *the class workshops
   *watched all the class recordings to understand the concept
   *the walking skeleton was helfull as always super wonderful
+
+**extra**
+
+i made some changes i fetched the data saved from the form to this url https://week4-assignment-rwnh.onrender.com/messages and made an object to store 6 data from it so as to render it on the page.
+
+the form still works very well the data gets send to this enpoint https://week4-assignment-rwnh.onrender.com/messages.
+
+the data could still be viewed in the console.

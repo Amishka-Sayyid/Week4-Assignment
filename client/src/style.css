@@ -189,7 +189,7 @@ main::after {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
   border: 1px solid #f38fe4;
   border-radius: 2rem;
@@ -204,13 +204,13 @@ main::after {
   align-content: center;
 
   font-family: "Roboto Condensed", serif;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 400;
   font-style: normal;
   text-align: center;
 
-  height: 20rem;
-  width: 20rem;
+  height: 17rem;
+  width: 17rem;
   margin: auto;
 
   border: 1px solid #eccce7;
@@ -225,7 +225,7 @@ main::after {
 .message {
   font-style: italic;
   font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
   padding: 1rem;
 }

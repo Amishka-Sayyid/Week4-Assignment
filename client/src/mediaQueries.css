@@ -73,8 +73,8 @@
 
   .UserDiv {
     width: 70%;
-    height: 10rem;
-    font-size: 1rem;
+    height: 12rem;
+    font-size: 0.9rem;
   }
   .message {
     font-size: 0.9rem;
@@ -154,8 +154,8 @@
   }
   .UserDiv {
     width: 70%;
-    height: 10rem;
-    font-size: 1rem;
+    height: 12rem;
+    font-size: 0.9rem;
   }
   .message {
     font-size: 0.9rem;
